@@ -1,0 +1,25 @@
+<form [formGroup]="registerForm" (submit)="register(confpass.value)">
+    <div>
+        <p>กรุณากรอกข้อมูลให้ครบทุกช่อง</p>
+        <div>
+            first name : <input type="text" formControlName="fName">
+        </div>
+        <div>
+            last name: <input type="text" formControlName="lName">
+        </div>
+        <div>
+            email: <input type="text" formControlName="email">
+        </div>
+        <div>
+            password: <input type="password" #confpass>
+        </div>
+        <div>
+            confirm password: <input type="password" formControlName="password">
+        </div>
+        <div>
+            <button [routerLink]="['/register']" type="submit"
+                [disabled]="registerForm.invalid">Register</button>
+            <button [routerLink]="['/login']" type="button">Back</button>
+        </div>
+    </div>
+</form>

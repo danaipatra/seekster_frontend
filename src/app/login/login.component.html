@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (submit)="login()">
+    <div>
+        <div>
+            email : <input type="text" formControlName="email">
+        </div>
+        <div>
+            password: <input type="password" formControlName="password">
+        </div>
+        <div>
+            <button type="submit" [disabled]="loginForm.invalid">Login</button>
+            <button [routerLink]="['/register']">Register</button>
+        </div>
+    </div>
+</form>
+
+<h1>{{token}}</h1>
